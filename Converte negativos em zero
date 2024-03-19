@@ -1,0 +1,19 @@
+int main(){
+	setlocale(LC_ALL, "portuguese");
+	
+	for(i=0;i<SIZE;i++){
+		printf("DIGITE O %dº NÚMERO: ",i+1);
+		scanf("%d",&numero[i]);
+		
+		if(numero[i]<0){
+		numero[i] = 0;
+		}
+	}
+	
+	puts("\n\n=== EXIBINDO DADOS ===");
+	for(i=0;i<SIZE;i++){
+	printf("\n%dº NÚMERO INSERIDO: %d",i+1,numero[i]);
+	}
+	
+	return 0;
+}
