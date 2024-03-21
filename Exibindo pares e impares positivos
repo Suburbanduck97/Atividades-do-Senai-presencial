@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <locale.h>
+
+int par= 0, impar = 0, contador = 0 , numeros = 1, numerosPositivos = 0 , numerosNegativos;
+int positivosPares = 0, positivosImpares = 0;
+
+int main(){
+	setlocale(LC_ALL, "portuguese");
+
+	puts("=== INSIRA UM VALOR QUALQUER ===\n");
+	
+	while(numeros != 0){
+	printf("DIGITE O %dº VALOR: ",contador+1);
+	scanf("%d",&numeros);
+	
+	contador++;
+	if(numeros > 0 || numeros < 0){
+	par += numeros % 2 == 0;0
+	impar += numeros % 2 != 0;
+	
+	if((numeros > 0) && par)
+	positivosPares++;
+	else if((numeros > 0) && impar)
+	positivosImpares++;
+	
+	numeros>0? numerosPositivos++ : numerosNegativos++;
+	}else{
+	break;
+	}
+	
+	}
+	
+	
+	puts("=== DADOS EXIBIDOS ===\n");
+	printf("\nQUANTIDADE DE NÚMEROS POSITIVOS PARES: %d\n",positivosPares);
+	printf("QUANTIDADE DE NÚMEROS POAITIVOS IMPARES: %d\n",positivosImpares);
+	printf("QUANTIDADE DE NÚMEROS POSITIVOS: %d\n",numerosPositivos);
+	printf("QUANTIDADE DE NÚMEROS NEGATIVOS: %d\n",numerosNegativos);
+	printf("QUANTIDADE DE NÚMEROS INSERIDOS: %d\n", contador);
+	
+	return 0;
+	}
