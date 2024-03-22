@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <locale.h>
+
+char alunos[4][200];
+float notas[3][4], mediaNotas, somaNotas = 0;
+int i, j;             
+
+
+int main(){
+	setlocale(LC_ALL, "portuguese");
+	for (i= 0; i < 4; i++){
+		printf("Digite o nome do %dº aluno: ",i+1);
+		scanf("%s",&alunos[i]);
+		
+		for(j = 0; j < 3; j++){
+			printf("Digite a %dº nota: ", j+1);
+			scanf("%f",&notas[i][j]);
+			somaNotas+= notas[i][j];
+					
+		}
+		
+		mediaNotas = somaNotas / j;
+		somaNotas = 0;
+		
+		printf("\n");
+	}
+	
+	
+	
+	printf("=== EXIBINDO RESULTADOS ===\n");
+	for(i=0;i< 4;i++){
+		printf("NOME DO(A) %dº ALUNO(A): %s",i+1,alunos[i]);
+		for(j=0;j<3;j++){
+		printf("\nNOTA DO(A) %dº ALUNO(A): %.1f",i+1, notas[i][j]);
+		}
+		
+		printf("\nA MÉDIA DA NOTA É: %.1f", mediaNotas);
+		
+		printf("\n");
+	}
+	
+	return 0;
+}
